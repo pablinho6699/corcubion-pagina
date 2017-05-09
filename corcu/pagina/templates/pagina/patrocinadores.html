@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/pestanas.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jugadores.css' %}">
+    </head>
+    {% block javascript %}
+	    <script src='/static/js/main.js'></script>
+    {% endblock %}
+
+    <body>
+        <header>
+            <title></title>
+            <div class="encabezado">
+                <img src=/static/pagina/escudo.png align="left" class="circulo">
+                <div class="corcubion">UD Corcubión</div>
+            </div>
+        </header>
+        <nav id="menu">
+            <ul>
+                <li><a href="http://127.0.0.1:8000/pagina/">Noticias</a></li>
+                <li><a href="http://127.0.0.1:8000/plantilla/senior">Equipos</a>
+                    <ul>
+                        <li><a href="http://127.0.0.1:8000/plantilla/senior">Senior</a></li>
+                        <li><a href="http://127.0.0.1:8000/plantilla/juveniles">Juveniles</a></li>
+                    </ul>  
+                </li>
+                <li><a href="">Videos</a></li>
+                <li><a href="">Patrocinadores</li>
+                <li><a href="">Tienda</a></li>
+            </ul>
+        </nav>
+        <main>
+        </main>  
+    </body>
+</html>

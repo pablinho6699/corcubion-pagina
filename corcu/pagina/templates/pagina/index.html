@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/pestanas.css' %}">
+    </head>
+
+    <body>
+        <header>
+            <title></title>
+            <div class="encabezado">
+                <img src=/static/pagina/escudo.png align="left" class="circulo">
+                <div class="corcubion">UD Corcubión</div>
+                <nav id="menu">
+                    <ul>
+                        <li><a href="http://127.0.0.1:8000/pagina/">Noticias</a></li>
+                        <li><a href="http://127.0.0.1:8000/plantilla/senior">Equipos</a>
+                            <ul>
+                                <li><a href="http://127.0.0.1:8000/plantilla/senior">Senior</a></li>
+                                <li><a href="http://127.0.0.1:8000/plantilla/juveniles">Juveniles</a></li>
+                            </ul>  
+                        </li>
+                        <li><a href="">Videos</a></li>
+                        <li><a href="">Patrocinadores</li>
+                        <li><a href="">Tienda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="notprincipal">
+                <img class="grande" src={{principal.foto}}>
+            </div>
+            <div class="redesSociales">
+                <section class="twitter">
+                    <p class="redes">Redes Sociales</p>
+                </section>
+                <div class="logos">
+                    <img class="pequena" src="/static/pagina/simbolos/face.png">
+                    <img class="pequena" src="/static/pagina/simbolos/insta.png">
+                    <img class="pequena" src="/static/pagina/simbolos/Twitter-logo2.png">
+                    <img class="pequena" src="/static/pagina/simbolos/youtube.png">
+                </div>
+            </div>
+            <div class="patrocinadores">
+                {% if patrocinadores%}
+                    {% for pat in patrocinadores %}
+                        <img class="patr" src={{pat.foto}}>
+                    {% endfor %}                
+                {% else %}
+                    Non hai patrocinadores
+                {% endif %}
+
+            </div>
+            <div class="contenedor-noticias">
+                <section class = "noticia1">
+                {% if noticias%}
+                    <ul class="noticias">  
+                    {% for n in noticias %}
+                        <div class="not">
+                            <h2 class="titular">{{ n.titular }}</h2><img class="mediana" src={{ n.foto }} >
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    Non hai xogadores
+                {% endif %}
+                </section>
+            </div>
+        </main>  
+    </body>
+</html>
